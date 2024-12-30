@@ -14,4 +14,6 @@ router.get('/careers', function (req, res, next) {
   res.render('careers'); // Render the careers.ejs page
 });
 
+
+
 module.exports = router;

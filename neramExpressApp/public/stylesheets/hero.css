@@ -43,10 +43,14 @@
   font-weight: 700;
   line-height: 1.2;
   color: #e8e8e8;
+  font-family: 'Merriweather', serif;
+
   margin-bottom: 20px;
 }
 
 .hero p {
+    font-family: 'Merriweather', serif;
+
   font-size: 1.4rem;
   line-height: 1.8;
   color: #cfd8dc;

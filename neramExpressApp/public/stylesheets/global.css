@@ -63,7 +63,9 @@ body > * {
 .font-merriweather {
   font-family: 'Merriweather', serif;
 }
-
+.padding10 {
+    padding: 10%;
+}
 .font-sourcesans {
   font-family: 'Source Sans Pro', sans-serif;
 }
