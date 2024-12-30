@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const { BlobServiceClient, StorageSharedKeyCredential } = require('@azure/storage-blob');
+const { BlobServiceClient } = require('@azure/storage-blob');
 const Application = require('../models/Application');
 const router = express.Router();
 require('dotenv').config();
@@ -11,15 +11,14 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 } // Limit to 5MB
 });
 
-// Azure Storage Configuration
+// Configure Azure Blob Storage
 const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME;
 const accountKey = process.env.AZURE_STORAGE_ACCOUNT_KEY;
 const containerName = process.env.AZURE_BLOB_CONTAINER_NAME;
 
-const sharedKeyCredential = new StorageSharedKeyCredential(accountName, accountKey);
 const blobServiceClient = new BlobServiceClient(
   `https://${accountName}.blob.core.windows.net`,
-  sharedKeyCredential
+  new Azure.StorageSharedKeyCredential(accountName, accountKey)
 );
 
 const containerClient = blobServiceClient.getContainerClient(containerName);
