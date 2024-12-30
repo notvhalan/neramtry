@@ -1,0 +1,157 @@
+/* =========================
+   About Section
+   ========================= */
+   .about-section {
+    padding: 80px 10%; /* Spacious layout */
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333333; /* Dark gray text */
+    transition: background-color 0.3s ease; /* Subtle background transition */
+    font-family: 'Open Sans', sans-serif; /* Modern sans-serif font */
+  }
+  
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a1a; /* Dark gray for headings */
+    margin-bottom: 15px;
+    letter-spacing: 0.5px; /* Slight letter spacing for refinement */
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+  }
+  
+  .about-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555555; /* Medium gray */
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif; /* Clean sans-serif */
+  }
+  
+  /* Goals Section */
+  .about-goal {
+
+    display: flex;
+    align-items: center; /* Vertically center-align the text */
+    gap: 20px; /* Space between h2 and p */
+    margin-bottom: 20px; /* Spacing below the block */
+  }
+  
+  .about-goal h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222222; /* Darker text */
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  .about-goal p {
+    font-size: 1.3rem;
+    padding-left: 10%;
+    color: #444444;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Statistics Section */
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    gap: 30px;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #dcdcdc; /* Light divider */
+  }
+  
+  .stat {
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.03); /* Elevated shadow on hover */
+  }
+  
+  .stat h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1a1a1a; /* Dark gray for numbers */
+    font-family: 'Merriweather', serif; /* Classic serif font for numbers */
+  }
+  
+  .stat p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555555; /* Medium gray text */
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .stat small {
+    display: block;
+    font-size: 0.85rem;
+    color: #888888; /* Light gray for small text */
+    margin-top: 5px;
+  }
+  
+  /* Team Section */
+  .team-section {
+    margin-top: 40px;
+  }
+  
+  .team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1a1a1a; /* Darker gray for headings */
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .team-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555555; /* Medium gray text */
+    margin-bottom: 20px;
+  }
+  
+  .team-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+    gap: 30px;
+  }
+  
+  .team-stats .stat {
+    padding: 10px;
+    text-align: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-stats .stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.01);
+  }
+  
+  /* Buttons (Optional Overrides) */
+  button {
+    background-color: #555555; /* Neutral dark gray button */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  button:hover {
+    background-color: #ffffff; /* Contrast on hover */
+    color: #333333; /* Darker text */
+    transform: scale(1.04);
+  }
+  

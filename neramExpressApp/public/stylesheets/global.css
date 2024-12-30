@@ -1,0 +1,169 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Default font */
+  background-color: #F4F4F4; /* Light Gray Background */
+  color: #333333; /* Dark Gray Text */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #0D47A1; /* Dark Blue Headings */
+  font-family: 'Playfair Display', serif; /* Elegant font for headings */
+}
+
+p {
+  font-family: 'Lora', serif; /* Readable serif font for paragraphs */
+}
+
+a {
+  color: #1976D2; /* Blue Links */
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif; /* Clean sans-serif font for links */
+}
+
+a:hover {
+  color: #D32F2F; /* Red Hover */
+}
+
+button {
+  background-color: #D32F2F; /* Red Buttons */
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', sans-serif; /* Modern font for buttons */
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Ensure no child element exceeds the viewport width */
+body > * {
+  max-width: 100vw; /* Restrict all direct children to the viewport width */
+  overflow-x: hidden; /* Prevent overflow caused by child elements */
+}
+
+/* Utility Classes for Font Usage */
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-lora {
+  font-family: 'Lora', serif;
+}
+
+.font-opensans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.font-merriweather {
+  font-family: 'Merriweather', serif;
+}
+
+.font-sourcesans {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/* animations */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* start slightly below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+.fade-in.in-view {
+opacity: 1;
+transform: translateY(0);
+}
+
+.fade-in-top {
+    opacity: 0;
+    transform: translateY(-20px); /* start slightly above */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+  
+.fade-in-top.in-view {
+opacity: 1;
+transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px); /* start left */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(30px); /* start right */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .highlight-cycle {
+    position: relative;
+    font-size: 5rem;
+    /* Optional: ensure the background behind text is transparent, 
+       so the highlight color is clearly visible. */
+    z-index: 1; /* So the text is above the pseudo-element */
+  }
+  
+  /* The pseudo-element that will highlight the text. */
+  .highlight-cycle::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; */
+    background: hsl(200, 100%, 80%); /* The highlight color */
+    transform-origin: bottom right;
+    z-index: -1; /* So it's behind the text */
+    transform: scaleX(0);
+    /* Keyframe animation that runs for 5s and repeats infinitely */
+    animation: highlightCycle 5s infinite ease-in-out;
+  }
+  
+  /* 
+    KEYFRAMES:
+    - 0%: The highlight is not visible (scaleX(0)).
+    - 10%: The highlight grows fully to scaleX(1).
+    - 90%: The highlight remains fully grown (still scaleX(1)).
+    - 100%: The highlight shrinks back to 0.
+  */
+  @keyframes highlightCycle {
+    0% {
+      transform: scaleX(0);
+    }
+    10% {
+      transform: scaleX(1);
+    }
+    90% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
+    }
+  }
+  
