@@ -7,30 +7,30 @@ on:
 
 jobs:
   infrastructure:
-    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3 # Checkout the repository code
+      - uses: actions/checkout@v3
 
       - name: Setup Azure CLI
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }} # Ensure AZURE_CREDENTIALS is added to GitHub Secrets
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy or update infrastructure
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: ${{ vars.NODEJS_RG }} # Use a GitHub variable or hard-code the resource group
-          template: ./devops/dev/main.dev.bicep # Ensure the correct path to your Bicep file
-          parameters: ./devops/dev/main.dev.bicepparam # Ensure the correct path to your parameters file
+          resourceGroupName: ${{ vars.NODEJS_RG }}
+          template: ./devops/dev/main.dev.bicep
+          parameters: ./devops/dev/main.dev.bicepparam
           failOnStdErr: false
 
   build:
-    needs: infrastructure # Wait for the infrastructure job to complete
+    needs: infrastructure
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3 # Checkout the repository code
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js version
         uses: actions/setup-node@v3
@@ -39,7 +39,7 @@ jobs:
 
       - name: Install dependencies, build, and test
         run: |
-          cd neramExpressApp # Adjust this directory path to match your project structure
+          cd neramExpressApp # Adjust this to your project directory
           npm install
           npm run build --if-present
           npm test --if-present
@@ -48,13 +48,13 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: ./myExpressApp
+          path: ./neramExpressApp # Match the directory where your app resides
 
   deploy:
-    needs: build # Wait for the build job to complete
+    needs: build
     runs-on: ubuntu-latest
     environment:
-      name: Dev # Define the deployment environment
+      name: Dev
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -72,5 +72,5 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ vars.DEVAPPNAME }} # Use a GitHub variable or hard-code the app name
-          package: ./myExpressApp
+          app-name: ${{ vars.DEVAPPNAME }}
+          package: ./neramExpressApp # Match the artifact directory
