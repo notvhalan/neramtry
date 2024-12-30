@@ -1,0 +1,320 @@
+/* General Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    color: #111111;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.careers-container {
+    padding: 80px 10%;
+    color: #333;
+}
+
+/* Mission Section */
+.mission {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.mission-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0d1f44;
+    margin-bottom: 20px;
+}
+
+.mission-intro {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Students and Open Roles */
+.students-and-roles {
+    display: flex;
+    justify-content: space-between;
+    gap: 12%;
+    margin-bottom: 60px;
+}
+
+.role-item {
+    flex: 1;
+    background-color: #fafafa;
+    padding: 2%;
+    text-align: left;
+}
+
+.role-item .role-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.role-item h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0d1f44;
+    margin-bottom: 10px;
+}
+
+.role-item p {
+    font-size: 0.9rem;
+    color: #1f1f1f;
+    line-height: 1.6;
+}
+
+.role-item a {
+    font-size: 1rem;
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.role-item a:hover {
+    text-decoration: underline;
+}
+
+/* Featured Job */
+.featured-job {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 16px;
+    font-family: 'Open Sans', sans-serif;
+
+    margin-bottom: 24px;
+    background-color: #fafafa;
+  }
+  
+  .job-info {
+    display: grid;
+    gap: 8px;
+    font-family: 'Open Sans', sans-serif;
+
+  }
+  
+  .job-info h2 {
+    font-size: 1.5rem;
+    color: #090909;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+
+  }
+  
+  .job-meta {
+    font-size: 0.95rem;
+    color: #292929;
+    font-family: 'Open Sans', sans-serif;
+
+  }
+  
+  .job-meta span {
+    margin-right: 12px;
+  }
+  
+  .summary {
+    font-size: 1rem;
+    color: #252525;
+    font-family: 'Open Sans', sans-serif;
+
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .labels {
+    display: inline-flex;
+    gap: 8px;
+  }
+  
+  .labels span {
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  .labels .featured {
+    color: #1976d2;
+  }
+  
+  .labels .new {
+    color: #388e3c;
+  }
+  
+  .apply-section {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .featured-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+  
+  .apply-button {
+    background-color: #002d72;
+    color: #ffffff;
+    padding: 10px 16px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .apply-button:hover {
+    transform: scale(1.03);
+  }
+  
+  @media (max-width: 768px) {
+    .featured-job {
+      grid-template-columns: 1fr;
+    }
+    .apply-section {
+      justify-items: start;
+    }
+  }
+  
+
+/* Life at Neram */
+.life-at-neram {
+    margin: 60px 0;
+}
+
+.life-at-neram h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0d1f44;
+}
+
+.life-at-neram p {
+    font-size: 1.2rem;
+    color: #555555;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Team Voices */
+.team-voices {
+    margin: 80px 0;
+}
+
+.team-voices h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #0d1f44;
+    text-align: center;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.testimonial {
+    text-align: left;
+}
+
+.testimonial .testimonial-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.testimonial h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+/* Open Roles */
+.open-roles {
+    margin: 80px 0;
+}
+
+.open-roles h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #0d1f44;
+    text-align: center;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.role img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.role h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0d1f44;
+    margin-bottom: 10px;
+}
+
+.role p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555555;
+}
+
+/* Buttons */
+a.button {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #004494;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .students-and-roles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featured-job {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featured-job .featured-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+

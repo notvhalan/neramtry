@@ -31,16 +31,7 @@ a:hover {
   color: #D32F2F; /* Red Hover */
 }
 
-button {
-  background-color: #D32F2F; /* Red Buttons */
-  color: #FFFFFF;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-family: 'Source Sans Pro', sans-serif; /* Modern font for buttons */
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+
 
 button:hover {
   transform: scale(1.05); /* Slight zoom effect */
