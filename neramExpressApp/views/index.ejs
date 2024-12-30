@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neram</title>
+  <link rel="stylesheet" href="/stylesheets/header.css">
+</head>
+<body>
+  <!-- Include Header -->
+  <%- include('partials/header') %>
+
+  <!-- Main Content -->
+  <main>
+    <section class="hero">
+      <h1>Welcome to Neram</h1>
+      <p>Your trusted partner in financial innovation.</p>
+    </section>
+  </main>
+
+  <script src="/javascripts/navbar.js"></script>
+</body>
 </html>
