@@ -1,0 +1,97 @@
+/* ========================
+   Investment Approach
+   ======================== */
+   .investment-approach {
+    padding: 80px 10%;
+    background-color: #fdfdfd; /* Light cream background for elegance */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .investment-container {
+    display: flex;
+    max-width: 1200px;
+    align-items: center;
+    gap: 60px; /* Increased gap for a spacious layout */
+  }
+  
+  /* Left: Text Section */
+  .investment-text {
+    flex: 1;
+    font-family: 'Playfair Display', serif;
+    color: #2a2a2a; /* Soft dark gray */
+    transform: translateX(-30px);
+    animation: fadeInLeft 1s ease-out forwards;
+  }
+  
+  .investment-text h2 {
+    font-size: 3rem; /* Large and bold for impact */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #2a2a2a; /* Darker heading */
+  }
+  
+  .investment-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555555; /* Medium gray for body text */
+  }
+  
+  .more-details {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1976d2; /* Bright blue for the link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .more-details span {
+    margin-left: 5px;
+    font-size: 1.5rem; /* Slightly larger arrow for visual emphasis */
+    font-weight: bold;
+  }
+  
+  .more-details:hover {
+    color: #0d47a1; /* Darker blue for hover effect */
+  }
+  
+  /* Right: Image Section */
+  .investment-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    transform: translateX(30px);
+    animation: fadeInRight 1s ease-out forwards;
+  }
+  
+  .investment-image img {
+    width: 100%;
+    max-width: 500px; /* Ensures the image doesn't exceed the container */
+    border-radius: 4px; /* Rounded corners for smoothness */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    object-fit: cover; /* Ensures the image scales properly */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .investment-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+  
+    .investment-text {
+      margin-bottom: 20px;
+    }
+  
+    .investment-image img {
+      max-width: 100%;
+      height: auto; /* Maintain aspect ratio on smaller screens */
+    }
+  }
+  
