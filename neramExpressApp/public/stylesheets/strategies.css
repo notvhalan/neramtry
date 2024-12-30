@@ -1,0 +1,77 @@
+/* General Strategies Page Styles */
+.strategies-page {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    padding: 40px 10%;
+  }
+  
+  .strategies-intro {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .strategies-intro h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0D47A1;
+  }
+  
+  .strategies-intro p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 15px;
+  }
+  
+  /* Strategy List Section */
+  .strategies-list .strategy {
+    margin-bottom: 30px;
+  }
+  
+  .strategies-list .strategy h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1976D2;
+    margin-bottom: 10px;
+  }
+  
+  .strategies-list .strategy p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Forecasting and Specialized Approach Sections */
+  .forecasting, .specialized-approach {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 60px;
+  }
+  
+  .forecasting .content, .specialized-approach .content {
+    flex: 1;
+  }
+  
+  .forecasting .image, .specialized-approach .image {
+    flex: 1;
+  }
+  
+  .forecasting img, .specialized-approach img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .forecasting, .specialized-approach {
+      flex-direction: column;
+    }
+  
+    .forecasting .image, .specialized-approach .image {
+      margin-top: 20px;
+    }
+  }
+  

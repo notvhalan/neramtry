@@ -4,8 +4,9 @@
     top: 0;
     left: 0;
     width: 80%;
-    height: 60px;
-    background: #dee2e6;
+
+    height: 55px;
+    background: rgba(255, 255, 255, 0.75);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,44 +14,58 @@
     padding-right: 20%;
     padding-left: 10%;
     z-index: 1000;
-    transition: background 0.3s ease, height 0.3s ease;
-    border-bottom: 1px solid rgb(147, 147, 147);
+    transition: background 0.3s ease, height 0.3s ease, transform 0.3s ease;
     overflow: hidden;
-  }
-  
-  /* Navbar Animation on Hover */
-  .navbar:hover {
+    transform: translateY(0); /* Used for animation */
+}
+
+/* Navbar Animation on Hover */
+.navbar:hover {
     background: #e7eef6;
-  }
-  
-  /* Navigation Styles */
-  .navbar nav ul {
+}
+
+/* Scroll Effect */
+.navbar.scrolled {
+    height: 50px;
+    background: #ced4da;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow when scrolled */
+    transform: translateY(0); /* Ensure navbar stays visible */
+}
+
+/* Navbar Initial Animation */
+.navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Navigation Styles */
+.navbar nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     margin: 0;
     padding: 0;
-  }
-  
-  .navbar nav ul li {
+}
+
+.navbar nav ul li {
     position: relative;
-  }
-  
-  /* Link Styles */
-  .navbar nav ul li a {
+}
+
+/* Link Styles */
+.navbar nav ul li a {
     font-size: 0.9rem;
     font-weight: 400;
-    color: #333333;
+    color: #000000;
     text-decoration: none;
     padding: 8px 10px;
     border-radius: 5px;
     position: relative;
     transition: color 0.3s ease, background-color 0.3s ease;
-  }
-  
-  /* Hover Animation for Links */
-  .navbar nav ul li a::after {
+}
+
+/* Hover Animation for Links */
+.navbar nav ul li a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -59,56 +74,56 @@
     height: 2px;
     background: #1976D2;
     transition: width 0.3s ease;
-  }
-  
-  .navbar nav ul li a:hover {
+}
+
+.navbar nav ul li a:hover {
     color: #1976D2;
-  }
-  
-  .navbar nav ul li a:hover::after {
+}
+
+.navbar nav ul li a:hover::after {
     width: 100%;
-  }
-  
-  /* Logo Styles */
-  .navbar .logo img {
+}
+
+/* Logo Styles */
+.navbar .logo img {
     height: 25px;
     display: block;
-  }
-  
-  /* Adjust Navbar on Scroll */
-  .navbar.scrolled {
-    height: 50px;
-    background: #ced4da;
-  }
-  
-  /* Responsive Design for Small Screens */
-  @media (max-width: 768px) {
+    transition: transform 0.3s ease; /* Logo zoom animation */
+}
+
+.navbar:hover .logo img {
+    transform: scale(1); /* Slight zoom on hover */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
     .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      height: auto;
-      padding: 10px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 15px;
     }
-  
+
     .navbar nav ul {
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
     }
-  
+
     .navbar nav ul li a {
-      width: 100%;
-      font-size: 1rem;
-      padding: 10px;
-      text-align: left;
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+        text-align: left;
     }
-  
+
     .navbar nav ul li a::after {
-      height: 1px;
+        height: 1px;
     }
-  
+
     .navbar .logo img {
-      height: 35px;
+        height: 35px;
     }
-  }
-  
+}
+
+/* Smooth Scroll Animations */
