@@ -3,84 +3,82 @@ name: Deploy infrastructure and release Node.js application
 on:
   push:
     branches:
-      - main # Deploy only when changes are pushed to the 'main' branch
+      - main
 
 jobs:
   infrastructure:
-    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository code
       - uses: actions/checkout@v3
 
-      # Step 2: Login to Azure
-      - name: Setup Azure CLI
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }} # Ensure AZURE_CREDENTIALS is added to GitHub Secrets
-
-      # Step 3: Deploy or update infrastructure using ARM templates or Bicep
-      - name: Deploy or update infrastructure
-        uses: azure/arm-deploy@v1
-        with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: ${{ vars.NODEJS_RG }} # Use a GitHub variable or hard-code the resource group
-          template: ./devops/dev/main.dev.bicep # Ensure the correct path to your Bicep file
-          parameters: ./devops/dev/main.dev.bicepparam # Ensure the correct path to your parameters file
-          failOnStdErr: false
-
-  build:
-    needs: infrastructure # Wait for the infrastructure job to complete
-    runs-on: ubuntu-latest
-
-    steps:
-      # Step 1: Checkout the repository code
-      - uses: actions/checkout@v3
-
-      # Step 2: Setup Node.js environment
-      - name: Setup Node.js version
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-
-      # Step 3: Install dependencies, build, and test
-      - name: Install dependencies, build, and test
-        run: |
-          cd neramExpressApp # Adjust this to your project directory
-          npm install
-          npm run build --if-present
-          npm test --if-present
-
-      # Step 4: Upload artifact for deployment
-      - name: Upload artifact for deployment
-        uses: actions/upload-artifact@v3
-        with:
-          name: node-app
-          path: ./neramExpressApp # Match the directory where your app resides
-
-  deploy:
-    needs: build # Wait for the build job to complete
-    runs-on: ubuntu-latest
-    environment:
-      name: Dev # Define the deployment environment
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-      # Step 1: Download artifact from the build job
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: node-app
-
-      # Step 2: Setup Azure CLI
       - name: Setup Azure CLI
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # Step 3: Deploy the app to Azure Web App
+      - name: Deploy or update infrastructure
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          resourceGroupName: ${{ vars.NODEJS_RG }}
+          template: ./devops/dev/main.dev.bicep
+          parameters: ./devops/dev/main.dev.bicepparam
+          failOnStdErr: false
+
+  build:
+    needs: infrastructure
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies, build, and test
+        run: |
+          cd neramExpressApp
+          npm install
+          npm run build --if-present
+          npm test --if-present
+
+      - name: Create deployment package
+        run: |
+          cd neramExpressApp
+          zip -r ../neramExpressApp.zip ./*
+
+      - name: Upload artifact for deployment
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-app
+          path: neramExpressApp.zip
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: Dev
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: node-app
+
+      - name: Debug downloaded files
+        run: ls -R .
+
+      - name: Setup Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Deploy to Azure Web App
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ vars.DEVAPPNAME }} # Use a GitHub variable or hard-code the app name
-          package: ./neramExpressApp # Match the artifact directory
+          app-name: nodeJSExpressAppunique123
+          package: ./neramExpressApp.zip
+          slot-name: production
