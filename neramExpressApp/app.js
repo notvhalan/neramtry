@@ -58,7 +58,7 @@ app.get('/debug', (req, res) => {
     port: process.env.PORT
   });
 });
-const port = process.env.PORT || 8080; // Default to 8080 for local
+const port = process.env.PORT || 8080; // Default to 8080 for local updated
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
