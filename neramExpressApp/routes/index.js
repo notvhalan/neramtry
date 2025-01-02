@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const { BlobServiceClient, StorageSharedKeyCredential } = require('@azure/storage-blob');
+require('dotenv').config();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,26 +16,6 @@ router.get('/careers', function (req, res, next) {
   res.render('careers'); // Render the careers.ejs page
 });
 
-router.get('/test-blob', async (req, res) => {
-  try {
-    const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME;
-    const accountKey = process.env.AZURE_STORAGE_ACCOUNT_KEY;
-    const containerName = process.env.AZURE_BLOB_CONTAINER_NAME;
-
-    const blobServiceClient = new BlobServiceClient(
-      `https://${accountName}.blob.core.windows.net`,
-      new StorageSharedKeyCredential(accountName, accountKey)
-    );
-
-    const containerClient = blobServiceClient.getContainerClient(containerName);
-    const exists = await containerClient.exists();
-
-    res.json({ containerExists: exists });
-  } catch (error) {
-    console.error('Azure Blob Storage Error:', error.message);
-    res.status(500).json({ error: error.message });
-  }
-});
 
 // Debug Route
 router.get('/debug', (req, res) => {
@@ -43,4 +25,10 @@ router.get('/debug', (req, res) => {
     port: process.env.PORT,
   });
 });
+
+router.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).send('Internal Server Error');
+});
+
 module.exports = router;

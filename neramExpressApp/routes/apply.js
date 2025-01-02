@@ -33,9 +33,11 @@ const containerClient = blobServiceClient.getContainerClient(containerName);
 })();
 
 // GET /apply - Render the application page
-router.get('/', (req, res) => {
+router.get('/apply', (req, res) => {
   res.render('applypage');
 });
+
+
 
 // POST /apply - Handle file upload
 router.post('/', upload.single('resume'), async (req, res) => {
@@ -92,5 +94,8 @@ router.get('/resume/:id', async (req, res) => {
     res.status(500).send('Server error.');
   }
 });
+
+
+
 
 module.exports = router;
