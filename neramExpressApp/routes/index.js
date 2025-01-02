@@ -12,14 +12,7 @@ router.get('/strategies', function(req, res, next) {
 });
 
 router.get('/careers', (req, res) => {
-  res.render('careers', {
-    meta: {
-      title: "Join Neram - Careers",
-      description: "Explore exciting opportunities at Neram and be part of our innovative team shaping the future of finance.",
-      image: "https://resumesapplicaiton.blob.core.windows.net/previews/careers-preview.png", // Use the Azure-hosted image URL
-      url: "https://neram.live/careers" // Correct URL for the page
-    }
-  });
+  res.render('careers',);
 });
 
 
