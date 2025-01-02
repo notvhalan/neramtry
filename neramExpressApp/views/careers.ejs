@@ -7,25 +7,36 @@
 <link rel="stylesheet" href="/stylesheets/header.css">
 <link rel="stylesheet" href="/stylesheets/global.css">
 <link rel="stylesheet" href="/stylesheets/careers.css">
+<link rel="stylesheet" href="/stylesheets/partialscss/careerssection.css">
 
 
 <%- include('partials/hero-careers') %>
 
 <div class="careers-container">
+  <div class="careers-padding">
+
   <section class="mission">
-    <h1 class="mission-title">Join Our Team</h1>
+    <h1 class="mission-title">Shape the Future of Asset Management</h1>
     <p class="mission-intro">
-      At Neram, we believe that exceptional talent is the foundation of extraordinary achievements.
-      We're committed to fostering a culture of innovation, collaboration, and growth.
+      We are redefining the boundaries of finance and technology. We seek individuals who are passionate about innovation, eager to solve complex challenges, and motivated to create meaningful impact in a rapidly evolving industry.
     </p>
   </section>
+</div>
+
+  <%- include('partials/careersection') %>
+  <div class="careers-padding">
+
+  <%- include('partials/featured-job') %>
 
   <%- include('partials/students-and-roles') %>
 
+  
+</div>
 
-  <%- include('partials/featured-job') %>
 </div>
 
 <%- include('partials/footer') %>
 <script src="/javascripts/navbar.js"></script>
 <script src="/javascripts/global.js"></script>
+
+<script src="/javascripts/careers.js"></script>

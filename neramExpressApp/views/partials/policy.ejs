@@ -1,0 +1,13 @@
+<div class="policies-container">
+    <% policies.forEach(policy => { %>
+      <div class="policy-card">
+        <h3 class="policy-title"><%= policy.title %></h3>
+        <p class="policy-date"><%= policy.date %></p>
+        <p class="policy-description"><%= policy.description %></p>
+        <div class="policy-footer">
+          <a href="<%= policy.pdfLink %>" class="policy-download-link" target="_blank">Download PDF &#8595;</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+  

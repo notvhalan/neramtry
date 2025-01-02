@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights</title>
+  <link rel="stylesheet" href="/stylesheets/insights.css">
+  <link rel="stylesheet" href="/stylesheets/global.css">
+  <link rel="stylesheet" href="/stylesheets/header.css">
+  <link rel="stylesheet" href="/stylesheets/footer.css">
+</head>
+<body>
+  <!-- Header -->
+  <%- include('partials/header') %>
+
+  <section class="insights-page">
+    <!-- Insights Header -->
+    <div class="insights-header">
+      <h1>News, Insights & Policy</h1>
+    </div>
+
+    <!-- Insights Articles -->
+
+    <%- include('partials/articles') %>
+    <section class="policies-section">
+        <div class="insights-header">
+
+        <h1>Policy Positions</h1>
+        </div>  
+        <%- include('partials/policy', { policies }) %>
+    </section>
+      
+    <!-- Insights Graphs -->
+    <div class="insights-graphs">
+        <div class="insights-header">
+
+      <h1>Market Trends</h1>
+      </div>
+      <div class="graphs-container">
+        <div id="graph1" class="graph"></div>
+        <div id="graph2" class="graph"></div>
+      </div>
+    </div>
+  </section>
+  <%- include('partials/footer') %>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="/javascripts/navbar.js"></script>
+  <script src="/javascripts/insights.js"></script>
+</body>
+</html>

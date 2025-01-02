@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Merriweather', serif;
     color: #111111;
     background-color: #ffffff;
     margin: 0;
@@ -8,14 +8,19 @@ body {
 }
 
 .careers-container {
-    padding: 80px 10%;
-    color: #333;
+    color: #ffffff;
 }
+
+
+.careers-padding {
+    padding: 80px 10%;
+}
+
 
 /* Mission Section */
 .mission {
-    text-align: center;
-    margin-bottom: 60px;
+
+    text-align: left;
 }
 
 .mission-title {
@@ -23,12 +28,16 @@ body {
     font-weight: bold;
     color: #0d1f44;
     margin-bottom: 20px;
+    font-family: 'Roboto Slab', serif;
+
 }
 
 .mission-intro {
     font-size: 1rem;
     color: #555555;
     line-height: 1.8;
+    font-family: 'Merriweather', serif;
+
     max-width: 800px;
     margin: 0 auto;
 }
@@ -38,6 +47,8 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 12%;
+    font-family: 'Merriweather', serif;
+
     margin-bottom: 60px;
 }
 
@@ -58,7 +69,9 @@ body {
 .role-item h2 {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #0d1f44;
+    color: #0b0e14;
+    font-family: 'Roboto Slab', serif;
+
     margin-bottom: 10px;
 }
 
@@ -81,6 +94,8 @@ body {
 
 /* Featured Job */
 .featured-job {
+    padding: 80px 10%;
+
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 20px;
@@ -95,7 +110,7 @@ body {
   .job-info {
     display: grid;
     gap: 8px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Slab', serif;
 
   }
   
@@ -103,7 +118,7 @@ body {
     font-size: 1.5rem;
     color: #090909;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Slab', serif;
 
   }
   
@@ -317,4 +332,3 @@ a.button:hover {
         margin-bottom: 20px;
     }
 }
-

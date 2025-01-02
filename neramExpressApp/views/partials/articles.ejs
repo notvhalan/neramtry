@@ -1,0 +1,11 @@
+<div class="insights-articles">
+    <div class="articles-container">
+      <% articles.forEach(article => { %>
+        <div class="article">
+          <h3><%= article.title %></h3>
+          <p><%= article.summary %></p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
