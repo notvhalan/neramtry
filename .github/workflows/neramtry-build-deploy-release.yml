@@ -19,8 +19,9 @@ jobs:
       - name: Deploy or update infrastructure
         uses: azure/arm-deploy@v1
         with:
+          scope: resourcegroup
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: ${{ vars.NODEJS_RG }}
+          resourceGroupName: ${{ secrets.NODEJS_RG }}
           template: ./devops/dev/main.dev.bicep
           parameters: ./devops/dev/main.dev.bicepparam
           failOnStdErr: false
