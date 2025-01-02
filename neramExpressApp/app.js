@@ -51,5 +51,16 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
+app.get('/debug', (req, res) => {
+  res.json({
+    accountName: process.env.AZURE_STORAGE_ACCOUNT_NAME,
+    accountKey: process.env.AZURE_STORAGE_ACCOUNT_KEY,
+    port: process.env.PORT
+  });
+});
+const port = process.env.PORT || 8080; // Default to 8080 for local
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 
 module.exports = app;
