@@ -36,9 +36,15 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/apply', applyRouter); // <-- We'll handle all /apply routes here
 // Test Blob Storage Route
-const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME;
-const accountKey = process.env.AZURE_STORAGE_ACCOUNT_KEY;
-const containerName = process.env.AZURE_BLOB_CONTAINER_NAME;
+const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME || 'undefined';
+const accountKey = process.env.AZURE_STORAGE_ACCOUNT_KEY || 'undefined';
+const containerName = process.env.AZURE_BLOB_CONTAINER_NAME || 'undefined';
+
+if (!accountName || !accountKey || !containerName) {
+  console.error('Azure Blob Storage environment variables are missing!');
+  process.exit(1); // Exit the application
+}
+
 console.log('AZURE_STORAGE_ACCOUNT_NAME:', process.env.AZURE_STORAGE_ACCOUNT_NAME);
 console.log('AZURE_STORAGE_ACCOUNT_KEY:', process.env.AZURE_STORAGE_ACCOUNT_KEY);
 console.log('AZURE_BLOB_CONTAINER_NAME:', process.env.AZURE_BLOB_CONTAINER_NAME);
