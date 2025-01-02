@@ -1,5 +1,5 @@
 using 'main.dev.bicep'
 param location = 'uksouth'
-param appSKU = 'F1'
+param appSKU = 'B1'
 param servicePlan = 'nodeJSServicePlan'
 param appName = 'nodeJSExpressAppunique123'

@@ -1,4 +1,6 @@
-clientId:88ec06e0-9bb2-4ff6-81f8-57624b86d742
-tenantId:922fdd0d-7bbe-4f07-8565-c84aac6add33
-clientSecret:wNV8Q~jcRBGPzMLr2qc3TzgzROUqnir6Uv27sck6
-subscriptionId:f24361a2-814b-4dff-81bb-68a505e64f9d
+{ 
+"clientId": "88ec06e0-9bb2-4ff6-81f8-57624b86d742",
+tenantId": "922fdd0d-7bbe-4f07-8565-c84aac6add33",
+"clientSecret": "wNV8Q~jcRBGPzMLr2qc3TzgzROUqnir6Uv27sck6",
+"subscriptionId": "f24361a2-814b-4dff-81bb-68a505e64f9d"
+}
