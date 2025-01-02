@@ -14,7 +14,7 @@ router.get('/careers', function (req, res, next) {
   res.render('careers'); // Render the careers.ejs page
 });
 
-app.get('/test-blob', async (req, res) => {
+router.get('/test-blob', async (req, res) => {
   try {
     const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME;
     const accountKey = process.env.AZURE_STORAGE_ACCOUNT_KEY;
@@ -36,7 +36,7 @@ app.get('/test-blob', async (req, res) => {
 });
 
 // Debug Route
-app.get('/debug', (req, res) => {
+router.get('/debug', (req, res) => {
   res.json({
     accountName: process.env.AZURE_STORAGE_ACCOUNT_NAME,
     accountKey: process.env.AZURE_STORAGE_ACCOUNT_KEY,
