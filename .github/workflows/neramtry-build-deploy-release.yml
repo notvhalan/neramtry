@@ -17,13 +17,11 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy or update infrastructure
-        uses: azure/arm-deploy@v1
-        with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: ${{ vars.NODEJS_RG }}
-          template: ./devops/dev/main.dev.bicep
-          parameters: ./devops/dev/main.dev.bicepparam
-          failOnStdErr: false
+        run: |
+          az deployment group create \
+            --resource-group ${{ vars.NODEJS_RG }} \
+            --template-file ./devops/dev/main.dev.bicep \
+            --parameters @./devops/dev/main.dev.bicepparam
 
   build:
     needs: infrastructure
