@@ -14,7 +14,7 @@ router.get('/careers', function (req, res, next) {
   res.render('careers'); // Render the careers.ejs page
 });
 
-app.get('/debug-env', (req, res) => {
+router.get('/debug-env', (req, res) => {
   res.json({
     storageAccountName: process.env.AZURE_STORAGE_ACCOUNT_NAME,
     storageAccountKey: process.env.AZURE_STORAGE_ACCOUNT_KEY,
