@@ -16,8 +16,8 @@ app.get('/careers', (req, res) => {
     meta: {
       title: "Join Neram - Careers",
       description: "Explore exciting opportunities at Neram and be part of our innovative team shaping the future of finance.",
-      image: "https://neram.live/images/careers-preview.jpg",
-      url: "https://resumesapplicaiton.blob.core.windows.net/previews/careers-preview.png"
+      image: "https://resumesapplicaiton.blob.core.windows.net/previews/careers-preview.png", // Use the Azure-hosted image URL
+      url: "https://neram.live/careers" // Correct URL for the page
     }
   });
 });
