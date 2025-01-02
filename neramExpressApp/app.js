@@ -62,8 +62,7 @@ app.use((err, req, res, next) => {
 // tre
 
 
-
-const port = process.env.PORT || 8080; // Default to 8080 for local updated
-console.log(`Server running on port ${port}`);
+console.log('Application is initializing...');
+console.log('Environment variables:', process.env);
 
 module.exports = app;
