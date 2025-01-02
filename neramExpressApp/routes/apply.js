@@ -33,7 +33,7 @@ const containerClient = blobServiceClient.getContainerClient(containerName);
 })();
 
 // GET /apply - Render the application page
-router.get('/apply', (req, res) => {
+router.get('/', (req, res) => {
   res.render('applypage');
 });
 
