@@ -11,7 +11,7 @@ router.get('/strategies', function(req, res, next) {
   res.render('strategies'); // Render the strategies.ejs page
 });
 
-app.get('/careers', (req, res) => {
+router.get('/careers', (req, res) => {
   res.render('careers', {
     meta: {
       title: "Join Neram - Careers",
