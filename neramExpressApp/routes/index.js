@@ -11,9 +11,17 @@ router.get('/strategies', function(req, res, next) {
   res.render('strategies'); // Render the strategies.ejs page
 });
 
-router.get('/careers', function (req, res, next) {
-  res.render('careers'); // Render the careers.ejs page
+app.get('/careers', (req, res) => {
+  res.render('careers', {
+    meta: {
+      title: "Join Neram - Careers",
+      description: "Explore exciting opportunities at Neram and be part of our innovative team shaping the future of finance.",
+      image: "https://neram.live/images/careers-preview.jpg",
+      url: "https://resumesapplicaiton.blob.core.windows.net/previews/careers-preview.png"
+    }
+  });
 });
+
 
 router.get('/insights', (req, res) => {
   // Define the articles array
