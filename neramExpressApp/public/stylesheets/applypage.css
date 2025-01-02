@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Use a clean, professional font */
+    color: #333; /* Dark gray text */
+    background-color: #f9f9f9; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+.applying-page {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Container */
+.form-container {
+    background-color: #ffffff; /* White background for form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-container h1 {
+    font-size: 2rem;
+    color: #0056b3; /* Professional blue */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-container p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0056b3; /* Highlight border on focus */
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* File Upload */
+.form-group input[type="file"] {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 0.9rem;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: #0056b3; /* Professional blue */
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #004494;
+    transform: scale(1.02); /* Slight zoom effect */
+}
+
+/* Labels Section */
+.labels span {
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-right: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+}
+
+.labels .featured {
+    background-color: #ff9800; /* Highlighted orange */
+}
+
+.labels .new {
+    background-color: #4caf50; /* Green for new */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-container p {
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
