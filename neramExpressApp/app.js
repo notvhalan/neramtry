@@ -10,7 +10,7 @@ require('dotenv').config();
 // Routers
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-// const applyRouter = require('./routes/apply');
+const applyRouter = require('./routes/apply');
 
 const app = express();
 
@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Use routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('/apply', applyRouter); // <-- We'll handle all /apply routes here
+app.use('/apply', applyRouter); // <-- We'll handle all /apply routes here
 // Test Blob Storage Route
 
 
